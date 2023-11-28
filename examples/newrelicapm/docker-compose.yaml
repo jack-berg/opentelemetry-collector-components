@@ -3,10 +3,10 @@ services:
     build:
       dockerfile: DockerPetclinic
     environment:
-      OTEL_SERVICE_NAME: "Petclinic-OldHTTP"
+      OTEL_SERVICE_NAME: "Petclinic-OldConventions"
       OTEL_LOGS_EXPORTER: otlp
       OTEL_EXPORTER_OTLP_ENDPOINT: https://otlp.nr-data.net:4317
-      OTEL_EXPORTER_OTLP_HEADERS: api-key=<NEW_RELIC_API_KEY>
+      OTEL_EXPORTER_OTLP_HEADERS: api-key=<NEW-RELIC-API-KEY>
       OTEL_METRIC_EXPORT_INTERVAL: 5000
       OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: DELTA
       OTEL_RESOURCE_ATTRIBUTES: service.instance.id=1
@@ -17,11 +17,11 @@ services:
     build:
       dockerfile: DockerPetclinic
     environment:
-      OTEL_SERVICE_NAME: "Petclinic-NewHTTP"
+      OTEL_SERVICE_NAME: "Petclinic-NewConventions"
       OTEL_LOGS_EXPORTER: otlp
       OTEL_EXPORTER_OTLP_ENDPOINT: https://otlp.nr-data.net:4317
-      OTEL_EXPORTER_OTLP_HEADERS: api-key=<NEW_RELIC_API_KEY>
-      OTEL_SEMCONV_STABILITY_OPT_IN: http
+      OTEL_EXPORTER_OTLP_HEADERS: api-key=<NEW-RELIC-API-KEY>
+      OTEL_SEMCONV_STABILITY_OPT_IN: http,jvm
       OTEL_METRIC_EXPORT_INTERVAL: 5000
       OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: DELTA
       OTEL_RESOURCE_ATTRIBUTES: service.instance.id=2
